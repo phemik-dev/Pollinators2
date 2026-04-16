@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pollinators
+
+> *"Motho ke motho ka batho ba bang"* — A person is a person through other people
+
+A social capital activation tool that helps integrators and connectors activate their dormant networks through Ubuntu-aligned relationship management.
+
+## Philosophy
+
+This is **not** a CRM. Every design choice embodies Ubuntu philosophy:
+
+- **Collective over individual** — "our constellation" not "your contacts"
+- **Trust over metrics** — stars + human notes, not scores
+- **Reciprocity over transactions** — warm flow indicators, not debt tracking
+- **Dignity over urgency** — invitations, not commands
+- **Simplicity over complexity** — if it doesn't serve daily use, cut it
+
+## Features (MVP — REMEMBER Territory)
+
+- **Living Directory** with Active/Warm/Dormant tiers
+- **Trust-based relationship tracking** (1-5 stars + personal note)
+- **Reciprocity flow indicators** (your turn / their turn / balanced)
+- **Interaction logging** (calls, emails, meetings, conferences)
+- **Dual view modes** — List view + Galaxy constellation view
+- **Quick search** across names, pursuits, tags, and expertise
+- **Advanced filters** by tier, reciprocity, trust level, and tags
+- **Dark mode** toggle
+- **Export/Import** JSON for data portability
+- **Backup reminders** — gentle prompts to save your constellation
+
+## Tech Stack
+
+- **Next.js 16** (App Router) + TypeScript
+- **Tailwind CSS v4** with AI BizHive design tokens
+- **Zustand v5** for state management
+- **localStorage** for persistence (no backend required)
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Design Principles
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project follows the **AI BizHive Design System** and **Ubuntu Design Principles**. See the foundation documents in `/docs/` for full philosophy.
 
-## Learn More
+**Color palette:** Midnight (authority), Ember (action), Solar (Ubuntu warmth), Grove (health), Cream (rest)
+**Typography:** Cormorant Garamond (display), Plus Jakarta Sans (body), Space Mono (metadata)
 
-To learn more about Next.js, take a look at the following resources:
+## Part of the AI BizHive Family
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Pollinators is built by [AI BizHive](https://aibizhive.com) — African collective intelligence at work.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*"Help me remember who I know, why they matter, and what we can build together."*

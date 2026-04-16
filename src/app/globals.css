@@ -1,26 +1,124 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* ── AI BizHive Design Tokens (Tailwind v4 @theme) ── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Midnight Family (Authority / Depth) */
+  --color-midnight: #0D1117;
+  --color-midnight-800: #161622;
+  --color-midnight-700: #252535;
+  --color-midnight-600: #3A3A55;
+
+  /* Ember Family (Demonstration / Action) */
+  --color-ember: #E8722A;
+  --color-ember-hover: #F5944A;
+  --color-ember-highlight: #FBB97A;
+  --color-ember-deep: #7A2D0A;
+
+  /* Solar Family (Ubuntu / Sovereignty) */
+  --color-solar: #F0C040;
+  --color-solar-light: #F7D87A;
+  --color-solar-pale: #FDF0C8;
+
+  /* Grove Family (Compliance / Protection) */
+  --color-grove: #1E5C3A;
+  --color-grove-mid: #2E8A56;
+  --color-grove-light: #6BBF8E;
+  --color-grove-mist: #EEF5F1;
+
+  /* Cream Family (Warmth / Rest) */
+  --color-cream: #FAF4EC;
+  --color-haze: #F2EDE4;
+
+  /* Ink (Type on light) */
+  --color-ink: #0F0F17;
+
+  /* Sand (Type on dark) */
+  --color-sand: #F5EDD9;
+
+  /* Typography */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: 'Space Mono', 'Courier New', monospace;
+
+  /* Border Radius */
+  --radius-button: 4px;
+  --radius-tag: 8px;
+  --radius-feature: 14px;
+  --radius-card: 20px;
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-card: 0 4px 40px rgba(13, 17, 23, 0.08);
+  --shadow-lift: 0 8px 48px rgba(13, 17, 23, 0.13);
+  --shadow-ember: 0 8px 32px rgba(232, 114, 42, 0.20);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ── CSS Custom Properties for Dark Mode Toggle ── */
+:root {
+  --bg-primary: #FAF4EC;
+  --bg-secondary: #FFFFFF;
+  --bg-tertiary: #F2EDE4;
+  --text-primary: #0F0F17;
+  --text-secondary: rgba(15, 15, 23, 0.65);
+  --text-soft: rgba(15, 15, 23, 0.42);
+  --border-default: rgba(15, 15, 23, 0.09);
+  --border-light: rgba(15, 15, 23, 0.05);
 }
 
+[data-theme="dark"] {
+  --bg-primary: #0D1117;
+  --bg-secondary: #252535;
+  --bg-tertiary: #161622;
+  --text-primary: #F5EDD9;
+  --text-secondary: rgba(245, 237, 217, 0.55);
+  --text-soft: rgba(245, 237, 217, 0.35);
+  --border-default: rgba(255, 255, 255, 0.07);
+  --border-light: rgba(255, 255, 255, 0.04);
+}
+
+/* ── Base Styles ── */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-tertiary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-default);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-soft);
+}
+
+/* ── Focus Ring ── */
+*:focus-visible {
+  outline: 2px solid #E8722A;
+  outline-offset: 2px;
+}
+
+/* ── Tier Collapse Animation ── */
+.tier-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.tier-content[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+
+.tier-content > div {
+  overflow: hidden;
 }

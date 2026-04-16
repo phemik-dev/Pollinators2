@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pollinators: The Sacred Scroll</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e8e8e8;
+            padding: 60px 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #0f1419;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #d4a574 0%, #8b6f47 100%);
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,255,255,0.03) 10px,
+                rgba(255,255,255,0.03) 20px
+            );
+            animation: shimmer 20s linear infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50%, 50%); }
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .ubuntu-symbol {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            border: 3px solid rgba(255,255,255,0.3);
+        }
+        
+        h1 {
+            font-size: 48px;
+            color: #0f1419;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            font-size: 20px;
+            color: #2a2a3e;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+        
+        .proverb {
+            background: rgba(0,0,0,0.2);
+            padding: 20px 30px;
+            border-radius: 10px;
+            font-size: 18px;
+            color: #fff;
+            font-style: italic;
+            border-left: 4px solid rgba(255,255,255,0.5);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Main Content */
+        .content {
+            padding: 60px 40px;
+        }
+        
+        .section {
+            margin-bottom: 80px;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #d4a574;
+        }
+        
+        .section-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #d4a574 0%, #8b6f47 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        h2 {
+            font-size: 32px;
+            color: #d4a574;
+            font-weight: 600;
+        }
+        
+        .section-subtitle {
+            font-size: 18px;
+            color: #888;
+            font-style: italic;
+            margin-top: 5px;
+        }
+        
+        /* Problem Statement */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .problem-card {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid #d4a574;
+            position: relative;
+        }
+        
+        .problem-card::before {
+            content: '❌';
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            font-size: 30px;
+            background: #0f1419;
+            padding: 0 10px;
+        }
+        
+        .problem-card h3 {
+            color: #d4a574;
+            font-size: 20px;
+            margin-bottom: 15px;
+            margin-top: 10px;
+        }
+        
+        .problem-card p {
+            color: #ccc;
+            line-height: 1.8;
+        }
+        
+        /* Philosophy */
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .philosophy-card {
+            background: rgba(212, 165, 116, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid rgba(212, 165, 116, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .philosophy-card:hover {
+            transform: translateY(-5px);
+            border-color: #d4a574;
+            background: rgba(212, 165, 116, 0.15);
+        }
+        
+        .philosophy-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+        
+        .philosophy-card h3 {
+            color: #d4a574;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .philosophy-card p {
+            color: #bbb;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        /* Core Features */
+        .features-container {
+            margin-top: 40px;
+        }
+        
+        .feature {
+            background: linear-gradient(to right, rgba(212, 165, 116, 0.05) 0%, transparent 100%);
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #d4a574;
+            position: relative;
+        }
+        
+        .feature-number {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 120px;
+            color: rgba(212, 165, 116, 0.1);
+            font-weight: 700;
+            line-height: 1;
+        }
+        
+        .feature h3 {
+            color: #d4a574;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .feature-tagline {
+            color: #888;
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        
+        .feature-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 25px;
+        }
+        
+        .feature-what, .feature-why {
+            position: relative;
+        }
+        
+        .feature-what h4, .feature-why h4 {
+            color: #d4a574;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+        
+        .feature-what ul, .feature-why p {
+            color: #ccc;
+            line-height: 1.8;
+        }
+        
+        .feature-what ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .feature-what li {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        
+        .feature-what li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #d4a574;
+        }
+        
+        /* Purpose Circles */
+        .purpose-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 40px;
+            padding: 40px 0;
+        }
+        
+        .purpose-circle {
+            text-align: center;
+            position: relative;
+        }
+        
+        .circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.2) 0%, rgba(139, 111, 71, 0.2) 100%);
+            border: 3px solid #d4a574;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .circle:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(212, 165, 116, 0.3);
+        }
+        
+        .circle-icon {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+        
+        .circle-title {
+            color: #d4a574;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .purpose-description {
+            color: #bbb;
+            font-size: 14px;
+            max-width: 200px;
+        }
+        
+        /* Rhythm */
+        .rhythm-flow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 40px;
+            padding: 40px;
+            background: rgba(212, 165, 116, 0.05);
+            border-radius: 15px;
+            position: relative;
+        }
+        
+        .rhythm-step {
+            text-align: center;
+            flex: 1;
+            position: relative;
+        }
+        
+        .rhythm-step:not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            right: -30px;
+            top: 30px;
+            font-size: 30px;
+            color: #d4a574;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #d4a574 0%, #8b6f47 100%);
+            color: #0f1419;
+            font-size: 24px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+        }
+        
+        .rhythm-step h4 {
+            color: #d4a574;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        
+        .rhythm-step p {
+            color: #bbb;
+            font-size: 13px;
+        }
+        
+        /* Sacred Rules */
+        .rules-container {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 40px;
+            border: 2px solid #d4a574;
+        }
+        
+        .rule {
+            display: flex;
+            align-items: start;
+            padding: 20px;
+            margin-bottom: 15px;
+            background: rgba(212, 165, 116, 0.05);
+            border-radius: 10px;
+        }
+        
+        .rule-icon {
+            font-size: 30px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .rule-content h4 {
+            color: #d4a574;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        
+        .rule-content p {
+            color: #bbb;
+            line-height: 1.7;
+        }
+        
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #d4a574 0%, #8b6f47 100%);
+            padding: 40px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .footer-quote {
+            font-size: 24px;
+            color: #0f1419;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .footer-subtext {
+            color: #2a2a3e;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .problem-grid,
+            .philosophy-grid,
+            .feature-body,
+            .purpose-container,
+            .rhythm-flow {
+                grid-template-columns: 1fr;
+                flex-direction: column;
+            }
+            
+            .rhythm-step:not(:last-child)::after {
+                content: '↓';
+                right: auto;
+                top: auto;
+                bottom: -25px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            h1 { font-size: 36px; }
+            h2 { font-size: 26px; }
+            .feature h3 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-content">
+                <div class="ubuntu-symbol">🌍</div>
+                <h1>POLLINATORS</h1>
+                <p class="subtitle">A Digital Indaba for Social Capital Activation</p>
+                <div class="proverb">
+                    <strong>Motho ke motho ka batho ba bang</strong><br>
+                    "A person is a person through other people"<br>
+                    — Ubuntu Wisdom
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            
+            <!-- The Problem -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-icon">⚠️</div>
+                    <div>
+                        <h2>The Sacred Problem</h2>
+                        <p class="section-subtitle">Why we built this</p>
+                    </div>
+                </div>
+                
+                <div class="problem-grid">
+                    <div class="problem-card">
+                        <h3>Sleeping Wealth</h3>
+                        <p>You've accumulated powerful networks over years — changemakers, innovators, aligned souls. But this <strong>social capital sleeps</strong>. It serves others more than you. You've become the baobab tree giving shade but never eating its own fruit.</p>
+                    </div>
+                    
+                    <div class="problem-card">
+                        <h3>The Forgetting</h3>
+                        <p>Until someone asks "Do you know anyone in X field?", you forget the depth of your network. Brilliant connections lay dormant because there's no system to <strong>remember, activate, and weave</strong> your tribe together.</p>
+                    </div>
+                    
+                    <div class="problem-card">
+                        <h3>Scattered Energy</h3>
+                        <p>You're an integrator — a bridge between worlds. But your energy scatters across LinkedIn messages, forgotten business cards, and "we should catch up sometime" promises. No rhythm. No ritual. No <strong>intentional weaving</strong>.</p>
+                    </div>
+                    
+                    <div class="problem-card">
+                        <h3>Individualism Creep</h3>
+                        <p>Traditional CRMs track "leads" and "conversions" — extractive, transactional. They miss the Ubuntu truth: <strong>collective flourishing</strong> happens when we ask "What magic emerges when Person A + Person B collaborate?"</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Philosophy -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-icon">🌿</div>
+                    <div>
+                        <h2>The Ubuntu Foundation</h2>
+                        <p class="section-subtitle">Our guiding principles</p>
+                    </div>
+                </div>
+                
+                <div class="philosophy-grid">
+                    <div class="philosophy-card">
+                        <div class="philosophy-icon">🤝</div>
+                        <h3>Collective Over Individual</h3>
+                        <p>We measure success not by personal gain alone, but by how many boats rise when we activate our network</p>
+                    </div>
+                    
+                    <div class="philosophy-card">
+                        <div class="philosophy-icon">🕸️</div>
+                        <h3>Relationships Are Living</h3>
+                        <p>Not "contacts" or "leads" — these are pollinators, cross-pollinating ideas, resources, and opportunities</p>
+                    </div>
+                    
+                    <div class="philosophy-card">
+                        <div class="philosophy-icon">🔥</div>
+                        <h3>Trust Is The Currency</h3>
+                        <p>We track depth of trust (credibility, reliability, intimacy) — because real magic requires real relationships</p>
+                    </div>
+                    
+                    <div class="philosophy-card">
+                        <div class="philosophy-icon">🎯</div>
+                        <h3>Purpose-Filtered Vision</h3>
+                        <p>Everything viewed through YOUR current goal — cutting noise, revealing signal, honoring your sacred work</p>
+                    </div>
+                    
+                    <div class="philosophy-card">
+                        <div class="philosophy-icon">⚡</div>
+                        <h3>Serendipity Engineering</h3>
+                        <p>AI reveals hidden connections — who + who + what = unexpected collaborative magic</p>
+                    </div>
+                    
+                    <div class="philosophy-card">
+                        <div class="philosophy-icon">🌱</div>
+                        <h3>Reciprocity & Memory</h3>
+                        <p>Track what you give, not just what you get — because ubuntu flows in circles, not straight lines</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Core Features -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-icon">⚙️</div>
+                    <div>
+                        <h2>The Three Sacred Features</h2>
+                        <p class="section-subtitle">Everything else is noise</p>
+                    </div>
+                </div>
+                
+                <div class="features-container">
+                    <div class="feature">
+                        <div class="feature-number">1</div>
+                        <h3>🗂️ The Living Directory</h3>
+                        <p class="feature-tagline">"Help me REMEMBER who I know"</p>
+                        
+                        <div class="feature-body">
+                            <div class="feature-what">
+                                <h4>What It Does</h4>
+                                <ul>
+                                    <li>Curated list of your "Pollinators" (the people who matter)</li>
+                                    <li>Trust scores (1-5 stars) + why you trust them</li>
+                                    <li>Tags/expertise (water tech, policy, AI, funding, etc.)</li>
+                                    <li>Quick search: "Who do I know in mining sector?"</li>
+                                    <li>Sort by: Trust level, Last contact, Sector</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="feature-why">
+                                <h4>Why It Matters</h4>
+                                <p><strong>Solves "The Forgetting"</strong> — You'll never again say "Wait, who do I know in that space?" Your tribe is visible, searchable, alive.</p>
+                                <p style="margin-top: 15px;"><strong>Ubuntu Alignment:</strong> Honors each person's unique value. Tracks relationship depth (trust), not transactional metrics. Your network becomes an ecosystem you can SEE.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-number">2</div>
+                        <h3>🧠 The Hivemind</h3>
+                        <p class="feature-tagline">"Help me see what WE can BUILD together"</p>
+                        
+                        <div class="feature-body">
+                            <div class="feature-what">
+                                <h4>What It Does</h4>
+                                <ul>
+                                    <li><strong>Auto-Scan Mode:</strong> AI analyzes YOUR goal + YOUR network → suggests 3 strategic scenarios</li>
+                                    <li><strong>Find Squad Mode:</strong> Type a specific need ("I need pilot partners for water compliance") → AI assembles the perfect 2-3 person team</li>
+                                    <li>Shows WHO is involved, WHY it works, WHAT to do first</li>
+                                    <li>Generates introduction emails to activate the opportunity</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="feature-why">
+                                <h4>Why It Matters</h4>
+                                <p><strong>This IS the activation engine.</strong> Your brain can't hold all possible combinations of Person A + Person B + Goal C. The Hivemind sees hidden synergies you'd miss.</p>
+                                <p style="margin-top: 15px;"><strong>Ubuntu Alignment:</strong> Creates collaborative opportunities, not individual transactions. Centers collective impact. Asks "How do we ALL benefit?" not "What's in it for me?"</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-number">3</div>
+                        <h3>📝 Interaction Logging</h3>
+                        <p class="feature-tagline">"Help me keep relationships WARM"</p>
+                        
+                        <div class="feature-body">
+                            <div class="feature-what">
+                                <h4>What It Does</h4>
+                                <ul>
+                                    <li>Simple log: When did we last speak? What did we discuss?</li>
+                                    <li>Tracks: Calls, Emails, Meetings, Conferences</li>
+                                    <li>One-line summary + optional tags</li>
+                                    <li>No complexity — just memory aid</li>
+                                    <li>"Last contact" visible on each person's card</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="feature-why">
+                                <h4>Why It Matters</h4>
+                                <p><strong>Prevents guilt and ghosting.</strong> Strong networks need regular touch — not every day, but intentionally. This lets you see "Who haven't I spoken to in 6 months?" and re-activate bonds.</p>
+                                <p style="margin-top: 15px;"><strong>Ubuntu Alignment:</strong> Relationship maintenance is reciprocity. You can't activate sleeping capital if you've gone silent. This creates rhythm and accountability.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Three Purposes -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-icon">🎯</div>
+                    <div>
+                        <h2>The Three Circles of Impact</h2>
+                        <p class="section-subtitle">Who this serves</p>
+                    </div>
+                </div>
+                
+                <div class="purpose-container">
+                    <div class="purpose-circle">
+                        <div class="circle">
+                            <div class="circle-icon">🔥</div>
+                            <div class="circle-title">Personal<br>Advancement</div>
+                        </div>
+                        <p class="purpose-description">Activate YOUR network for YOUR ventures, goals, and dreams</p>
+                    </div>
+                    
+                    <div class="purpose-circle">
+                        <div class="circle">
+                            <div class="circle-icon">❤️</div>
+                            <div class="circle-title">Loved Ones &<br>Family</div>
+                        </div>
+                        <p class="purpose-description">Connect people you care about to opportunities and resources</p>
+                    </div>
+                    
+                    <div class="purpose-circle">
+                        <div class="circle">
+                            <div class="circle-icon">🌍</div>
+                            <div class="circle-title">Collective<br>Good</div>
+                        </div>
+                        <p class="purpose-description">Catalyze collaborations that serve the greater community</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Rhythm -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-icon">🥁</div>
+                    <div>
+                        <h2>The Weekly Rhythm</h2>
+                        <p class="section-subtitle">Practice over perfection</p>
+                    </div>
+                </div>
+                
+                <div class="rhythm-flow">
+                    <div class="rhythm-step">
+                        <div class="step-number">1</div>
+                        <h4>Monday: Scan</h4>
+                        <p>Open Hivemind, scan 3 opportunities, pick 1 to pursue this week</p>
+                    </div>
+                    
+                    <div class="rhythm-step">
+                        <div class="step-number">2</div>
+                        <h4>Tuesday-Thursday: Act</h4>
+                        <p>Send introduction emails, schedule calls, log interactions</p>
+                    </div>
+                    
+                    <div class="rhythm-step">
+                        <div class="step-number">3</div>
+                        <h4>Friday: Reflect</h4>
+                        <p>Update trust scores, add new people, reactivate 1-2 dormant connections</p>
+                    </div>
+                </div>
+                
+                <p style="color: #888; text-align: center; margin-top: 30px; font-style: italic;">
+                    The Indaba Principle: Regular rhythms matter more than perfect data. Chase momentum, not completeness.
+                </p>
+            </div>
+
+            <!-- Sacred Rules -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-icon">📜</div>
+                    <div>
+                        <h2>The Sacred Rules</h2>
+                        <p class="section-subtitle">Return here when complexity creeps in</p>
+                    </div>
+                </div>
+                
+                <div class="rules-container">
+                    <div class="rule">
+                        <div class="rule-icon">🪓</div>
+                        <div class="rule-content">
+                            <h4>Rule 1: If it doesn't serve daily use, cut it</h4>
+                            <p>Pollinators is a TOOL, not a museum. Every feature must answer: "Does this help me remember who I know, why they matter, and what we can build together?" If no → prune.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="rule">
+                        <div class="rule-icon">⚡</div>
+                        <div class="rule-content">
+                            <h4>Rule 2: Activation over Analysis</h4>
+                            <p>We don't need charts showing "network velocity" or "sector distribution". We need ONE powerful move per week. Reports are vanity. Introductions are sanity.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="rule">
+                        <div class="rule-icon">🌊</div>
+                        <div class="rule-content">
+                            <h4>Rule 3: Flow over Features</h4>
+                            <p>Ubuntu flows in circles. Resist the urge to add "cool" features. Instead ask: "Does this strengthen the flow between me, my tribe, and our collective work?"</p>
+                        </div>
+                    </div>
+                    
+                    <div class="rule">
+                        <div class="rule-icon">🎯</div>
+                        <div class="rule-content">
+                            <h4>Rule 4: Your goal is the compass</h4>
+                            <p>Everything filtered through YOUR current objective. Update it monthly. If a feature doesn't align with that goal, it's distraction dressed as productivity.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="rule">
+                        <div class="rule-icon">🤝</div>
+                        <div class="rule-content">
+                            <h4>Rule 5: Reciprocity is sacred</h4>
+                            <p>Track what you GIVE as much as what you GET. The Hivemind suggests opportunities — but you must water them with generosity, not extraction.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-quote">
+                "Help me remember who I know, why they matter,<br>and what we can build together."
+            </div>
+            <p class="footer-subtext">
+                This is your touchstone. Return here whenever the path becomes unclear.<br>
+                <strong>Pollinators</strong> — A digital indaba for social capital activation.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
