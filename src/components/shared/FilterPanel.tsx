@@ -1,5 +1,6 @@
 'use client';
 
+import { useMemo } from 'react';
 import { useUIStore } from '@/store/useUIStore';
 import { usePollinatorStore } from '@/store/usePollinatorStore';
 import { Select } from './Select';
@@ -15,12 +16,13 @@ export function FilterPanel() {
   const sortBy = useUIStore((s) => s.sortBy);
   const setSortBy = useUIStore((s) => s.setSortBy);
 
-  // Collect all existing tags for the filter
-  const allTags = usePollinatorStore((s) => {
+  // Collect all existing tags for the filter — memoized to avoid infinite loop
+  const pollinators = usePollinatorStore((s) => s.pollinators);
+  const allTags = useMemo(() => {
     const tags = new Set<string>();
-    s.pollinators.forEach((p) => p.tags.forEach((t) => tags.add(t)));
+    pollinators.forEach((p) => p.tags.forEach((t) => tags.add(t)));
     return Array.from(tags).sort();
-  });
+  }, [pollinators]);
 
   if (!showFilters) return null;
 
