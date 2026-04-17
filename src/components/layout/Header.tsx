@@ -7,6 +7,7 @@ import { SearchBar } from '@/components/shared/SearchBar';
 import { Button } from '@/components/shared/Button';
 import { ThemeToggle } from './ThemeToggle';
 import { exportToJSON, validateImport } from '@/lib/export';
+import { parseContactFile } from '@/lib/importContacts';
 
 export function Header() {
   const viewMode = useUIStore((s) => s.viewMode);
@@ -14,10 +15,12 @@ export function Header() {
   const setOpenModal = useUIStore((s) => s.setOpenModal);
   const toggleFilters = useUIStore((s) => s.toggleFilters);
   const pollinators = usePollinatorStore((s) => s.pollinators);
+  const addPollinator = usePollinatorStore((s) => s.addPollinator);
   const importPollinators = usePollinatorStore((s) => s.importPollinators);
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const fileRef = useRef<HTMLInputElement>(null);
+  const contactsFileRef = useRef<HTMLInputElement>(null);
 
   // Close menu on outside click
   useEffect(() => {
@@ -52,6 +55,35 @@ export function Header() {
     };
     reader.readAsText(file);
     if (fileRef.current) fileRef.current.value = '';
+    setMenuOpen(false);
+  };
+
+  const handleContactsImport = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        const contacts = parseContactFile(file.name, reader.result as string);
+        if (contacts.length === 0) {
+          alert('No contacts found in this file.\n\nMake sure you exported a .vcf or .csv file from your contacts app.');
+          return;
+        }
+        const confirmed = confirm(
+          `Found ${contacts.length} contact${contacts.length !== 1 ? 's' : ''} to import.\n\n` +
+          `They will be added to your Warm Connections with default trust (3 stars). ` +
+          `You can update each one to add their story and move them into the right circle.\n\n` +
+          `Proceed?`
+        );
+        if (!confirmed) return;
+        // Add each contact individually so ids and dates are auto-generated
+        contacts.forEach(({ _imported: _, ...contact }) => addPollinator(contact));
+      } catch {
+        alert('Could not read this file. Please try exporting as .vcf or .csv from your contacts app.');
+      }
+    };
+    reader.readAsText(file);
+    if (contactsFileRef.current) contactsFileRef.current.value = '';
     setMenuOpen(false);
   };
 
@@ -97,18 +129,37 @@ export function Header() {
                 </svg>
               </button>
               {menuOpen && (
-                <div className="absolute right-0 top-full mt-1 w-40 bg-[var(--bg-card)] border border-[var(--border-default)] rounded-[var(--radius-feature)] shadow-lg z-50 py-1 overflow-hidden">
+                <div className="absolute right-0 top-full mt-1 w-52 bg-[var(--bg-card)] border border-[var(--border-default)] rounded-[var(--radius-feature)] shadow-lg z-50 py-1 overflow-hidden">
+                  {/* Contacts import */}
+                  <p className="px-4 pt-2 pb-1 text-[10px] font-mono uppercase tracking-[0.18em] text-[var(--text-soft)]">Import contacts</p>
+                  <label className="w-full text-left px-4 py-2 text-xs font-body text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-colors flex items-center gap-2 cursor-pointer">
+                    <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 7.5A3.5 3.5 0 009 7.5M6.5 5V1M4 3l2.5-2.5L9 3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/><path d="M1 11h11" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/></svg>
+                    From phone / Gmail / Outlook
+                    <input
+                      ref={contactsFileRef}
+                      type="file"
+                      accept=".vcf,.vcard,.csv"
+                      onChange={handleContactsImport}
+                      className="hidden"
+                    />
+                  </label>
+
+                  {/* Divider */}
+                  <div className="my-1 border-t border-[var(--border-default)]" />
+
+                  {/* Backup JSON */}
+                  <p className="px-4 pt-1 pb-1 text-[10px] font-mono uppercase tracking-[0.18em] text-[var(--text-soft)]">Backup</p>
                   <button
                     onClick={handleExport}
                     disabled={pollinators.length === 0}
-                    className="w-full text-left px-4 py-2.5 text-xs font-body text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-colors disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-2"
+                    className="w-full text-left px-4 py-2 text-xs font-body text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-colors disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-2"
                   >
                     <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1v8M3 6l3.5 3.5L10 6M1 11h11" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/></svg>
                     Export JSON
                   </button>
-                  <label className="w-full text-left px-4 py-2.5 text-xs font-body text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-colors flex items-center gap-2 cursor-pointer">
+                  <label className="w-full text-left px-4 py-2 text-xs font-body text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-colors flex items-center gap-2 cursor-pointer">
                     <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 9V1M3 4l3.5-3.5L10 4M1 11h11" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                    Import JSON
+                    Restore JSON
                     <input ref={fileRef} type="file" accept=".json" onChange={handleImport} className="hidden"/>
                   </label>
                 </div>
