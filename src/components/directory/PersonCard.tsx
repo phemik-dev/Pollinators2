@@ -6,6 +6,7 @@ import { ReciprocityDot } from '@/components/shared/ReciprocityDot';
 import { TagBadge } from '@/components/shared/TagBadge';
 import { formatRelative } from '@/lib/dates';
 import { useUIStore } from '@/store/useUIStore';
+import { isAwaitingStory } from '@/lib/completeness';
 
 interface PersonCardProps {
   pollinator: Pollinator;
@@ -50,9 +51,22 @@ export function PersonCard({ pollinator }: PersonCardProps) {
       </div>
 
       {/* Current pursuit */}
-      <p className="text-sm font-display italic text-[var(--text-secondary)] mb-2 line-clamp-2">
-        {pollinator.currentPursuit}
-      </p>
+      {isAwaitingStory(pollinator) ? (
+        <p
+          className="text-xs font-mono uppercase tracking-[0.12em] mb-2 px-2 py-0.5 rounded-[var(--radius-pill)] inline-block"
+          style={{
+            backgroundColor: 'var(--color-solar-pale)',
+            color: 'var(--color-solar)',
+            border: '1px solid var(--color-solar-light)',
+          }}
+        >
+          awaiting story
+        </p>
+      ) : (
+        <p className="text-sm font-display italic text-[var(--text-secondary)] mb-2 line-clamp-2">
+          {pollinator.currentPursuit}
+        </p>
+      )}
 
       {/* Last interaction */}
       {lastInteraction && (

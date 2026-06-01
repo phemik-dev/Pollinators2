@@ -4,6 +4,7 @@ import { useMemo } from 'react';
 import { usePollinatorStore } from '@/store/usePollinatorStore';
 import { useUIStore } from '@/store/useUIStore';
 import type { Pollinator } from '@/types/pollinator';
+import { isAwaitingStory } from '@/lib/completeness';
 
 export function useFilteredPollinators(): Pollinator[] {
   const pollinators = usePollinatorStore((s) => s.pollinators);
@@ -47,6 +48,11 @@ export function useFilteredPollinators(): Pollinator[] {
       result = result.filter((p) =>
         filters.tags.some((t) => p.tags.includes(t))
       );
+    }
+
+    // Filter by awaiting story
+    if (filters.awaitingStory) {
+      result = result.filter((p) => isAwaitingStory(p));
     }
 
     // Sort

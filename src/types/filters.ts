@@ -12,6 +12,7 @@ export interface FilterState {
   trustMin: TrustLevel;
   trustMax: TrustLevel;
   tags: string[];
+  awaitingStory: boolean;
 }
 
 export const DEFAULT_FILTERS: FilterState = {
@@ -20,4 +21,5 @@ export const DEFAULT_FILTERS: FilterState = {
   trustMin: 1,
   trustMax: 5,
   tags: [],
+  awaitingStory: false,
 };

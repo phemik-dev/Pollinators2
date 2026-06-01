@@ -7,6 +7,7 @@ import { ReciprocityDot } from '@/components/shared/ReciprocityDot';
 import { TagBadge } from '@/components/shared/TagBadge';
 import { Button } from '@/components/shared/Button';
 import { formatShort } from '@/lib/dates';
+import { isAwaitingStory } from '@/lib/completeness';
 
 const interactionIcons: Record<string, string> = {
   call: '📞',
@@ -98,9 +99,22 @@ export function PersonDetail() {
             <h3 className="text-[10px] font-mono uppercase tracking-[0.28em] text-ember mb-2">
               What They Carry
             </h3>
-            <p className="text-sm font-display italic text-[var(--text-primary)] leading-relaxed">
-              {pollinator.currentPursuit}
-            </p>
+            {isAwaitingStory(pollinator) ? (
+              <p className="text-sm font-body italic" style={{ color: 'var(--text-soft)' }}>
+                You haven&apos;t yet captured what {pollinator.name} is working on.{' '}
+                <button
+                  onClick={() => setOpenModal('edit')}
+                  className="underline underline-offset-2 transition-colors hover:opacity-80"
+                  style={{ color: 'var(--color-solar)' }}
+                >
+                  Add their story?
+                </button>
+              </p>
+            ) : (
+              <p className="text-sm font-display italic text-[var(--text-primary)] leading-relaxed">
+                {pollinator.currentPursuit}
+              </p>
+            )}
           </div>
 
           {/* Why they matter */}

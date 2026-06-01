@@ -115,6 +115,19 @@ export function FilterPanel() {
         </div>
       </div>
 
+      {/* Awaiting story filter */}
+      <div>
+        <p className="text-[10px] font-mono uppercase tracking-[0.28em] text-[var(--text-soft)] mb-2">Completeness</p>
+        <div className="flex flex-wrap gap-2">
+          <button
+            onClick={() => setFilters({ ...filters, awaitingStory: !filters.awaitingStory })}
+            className={chipClass(filters.awaitingStory)}
+          >
+            Awaiting story
+          </button>
+        </div>
+      </div>
+
       {/* Tags filter */}
       {allTags.length > 0 && (
         <div>
