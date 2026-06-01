@@ -41,7 +41,7 @@ export default function RootLayout({
       className={`${cormorant.variable} ${jakarta.variable} ${spaceMono.variable} h-full`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col antialiased">{children}</body>
+      <body className="min-h-full flex flex-col antialiased" suppressHydrationWarning>{children}</body>
     </html>
   );
 }

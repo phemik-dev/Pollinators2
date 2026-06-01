@@ -15,7 +15,7 @@ export function TieredList({ pollinators }: TieredListProps) {
   return (
     <div>
       <TierSection tier="active" pollinators={active} defaultOpen={true} />
-      <TierSection tier="warm" pollinators={warm} defaultOpen={false} />
+      <TierSection tier="warm" pollinators={warm} defaultOpen={active.length === 0} />
       <TierSection tier="dormant" pollinators={dormant} defaultOpen={false} />
     </div>
   );

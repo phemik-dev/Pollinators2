@@ -128,6 +128,8 @@ export function parseContactsCSV(text: string): ImportedContact[] {
     let phone = '';
     let linkedin = '';
 
+    let tags: string[] = [];
+
     if (format === 'gmail') {
       name = get('Name') || [get('Given Name'), get('Family Name')].filter(Boolean).join(' ');
       organization = get('Organization 1 - Name');
@@ -137,6 +139,14 @@ export function parseContactsCSV(text: string): ImportedContact[] {
       // Gmail stores websites separately — scan all website columns
       const websiteKeys = headers.filter(h => h.startsWith('Website') || h.includes('Website'));
       linkedin = websiteKeys.map(k => get(k)).find(v => v.includes('linkedin.com')) ?? '';
+    } else if (format === 'custom') {
+      name = get('display_name') || [get('first_name'), get('last_name')].filter(Boolean).join(' ');
+      organization = get('organisation');
+      role = get('job_title');
+      email = get('primary_email');
+      phone = get('primary_phone');
+      const category = get('category');
+      if (category) tags = [category];
     } else if (format === 'outlook') {
       name = [get('First Name'), get('Last Name')].filter(Boolean).join(' ') || get('Name');
       organization = getFirst('Company', 'Organization');
@@ -160,18 +170,19 @@ export function parseContactsCSV(text: string): ImportedContact[] {
 
     if (!name) continue;
 
-    contacts.push(makeContact({ name, organization, role, email, phone, linkedin }));
+    contacts.push(makeContact({ name, organization, role, email, phone, linkedin, tags }));
   }
 
   return contacts;
 }
 
-type CSVFormat = 'gmail' | 'outlook' | 'generic';
+type CSVFormat = 'gmail' | 'outlook' | 'custom' | 'generic';
 
 function detectCSVFormat(headers: string[]): CSVFormat {
   const has = (h: string) => headers.includes(h);
   if (has('Given Name') || has('E-mail 1 - Value') || has('Organization 1 - Name')) return 'gmail';
   if (has('First Name') && (has('E-mail Address') || has('Company'))) return 'outlook';
+  if (has('display_name') || has('primary_email') || has('primary_phone')) return 'custom';
   return 'generic';
 }
 
@@ -210,12 +221,13 @@ interface RawContact {
   email: string;
   phone: string;
   linkedin: string;
+  tags?: string[];
 }
 
-function makeContact({ name, organization, role, email, phone, linkedin }: RawContact): ImportedContact {
+function makeContact({ name, organization, role, email, phone, linkedin, tags = [] }: RawContact): ImportedContact {
   return {
     _imported: true,
-    name: name.trim(),
+    name: name.trim().replace(/^"+|"+$/g, '').trim(),
     organization: organization.trim() || undefined,
     role: role.trim() || undefined,
     // Ubuntu-specific fields — must be filled in by the Integrator
@@ -224,7 +236,7 @@ function makeContact({ name, organization, role, email, phone, linkedin }: RawCo
     trustLevel: 3,
     trustNote: '',
     tier: 'warm',
-    tags: [],
+    tags,
     contactInfo: {
       email: email.trim() || undefined,
       phone: phone.trim() || undefined,
