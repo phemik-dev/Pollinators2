@@ -4,7 +4,7 @@ const REQUIRED_FIELDS = ['id', 'name', 'currentPursuit', 'tier'] as const;
 
 export function exportToJSON(pollinators: Pollinator[]): void {
   const data = {
-    version: 1,
+    version: 1, // reserved for future migration logic
     exportDate: new Date().toISOString(),
     pollinators,
   };
