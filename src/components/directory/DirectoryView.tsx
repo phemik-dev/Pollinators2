@@ -12,15 +12,15 @@ import { PollinatorModal } from '@/components/forms/PollinatorModal';
 import { InteractionModal } from '@/components/forms/InteractionModal';
 import { DeleteConfirm } from '@/components/forms/DeleteConfirm';
 import { BackupReminder } from '@/components/data/BackupReminder';
+import { NudgeReminder } from '@/components/data/NudgeReminder';
+import { QuarterlyAudit } from '@/components/data/QuarterlyAudit';
 
 export function DirectoryView() {
   const viewMode = useUIStore((s) => s.viewMode);
   const allPollinators = usePollinatorStore((s) => s.pollinators);
-  const searchQuery = useUIStore((s) => s.searchQuery);
   const filtered = useFilteredPollinators();
 
   const isEmpty = allPollinators.length === 0;
-  const isFiltered = !isEmpty && filtered.length === 0 && (searchQuery.length > 0 || true);
 
   return (
     <>
@@ -45,7 +45,11 @@ export function DirectoryView() {
       <PollinatorModal />
       <InteractionModal />
       <DeleteConfirm />
+      {/* Reminder cards — NudgeReminder sits above BackupReminder on the right */}
+      <NudgeReminder />
       <BackupReminder />
+      {/* QuarterlyAudit appears on the left, suppressed when nudges are showing */}
+      <QuarterlyAudit />
     </>
   );
 }
