@@ -1,0 +1,322 @@
+{
+  "/home/user/Pollinators2/.claude/launch.json": {
+    "mtime": 1781545222.6419685,
+    "ast_hash": "9d373dc6025beb334aa2047bf7899d84",
+    "semantic_hash": "9d373dc6025beb334aa2047bf7899d84"
+  },
+  "/home/user/Pollinators2/eslint.config.mjs": {
+    "mtime": 1781545222.6539683,
+    "ast_hash": "dfa1f5f6a7037bf39dc510f30b180002",
+    "semantic_hash": "dfa1f5f6a7037bf39dc510f30b180002"
+  },
+  "/home/user/Pollinators2/next.config.ts": {
+    "mtime": 1781545222.6539683,
+    "ast_hash": "9b77af189a21a7a64e4bd7a426f64176",
+    "semantic_hash": "9b77af189a21a7a64e4bd7a426f64176"
+  },
+  "/home/user/Pollinators2/package.json": {
+    "mtime": 1781545222.6579683,
+    "ast_hash": "680f65451900933904df671dc5619b54",
+    "semantic_hash": "680f65451900933904df671dc5619b54"
+  },
+  "/home/user/Pollinators2/postcss.config.mjs": {
+    "mtime": 1781545222.6579683,
+    "ast_hash": "239f3ebf717465dc636818a1a619398d",
+    "semantic_hash": "239f3ebf717465dc636818a1a619398d"
+  },
+  "/home/user/Pollinators2/src/app/layout.tsx": {
+    "mtime": 1781545222.6637735,
+    "ast_hash": "2965d16fc124ac7c06725d51555e3fde",
+    "semantic_hash": "2965d16fc124ac7c06725d51555e3fde"
+  },
+  "/home/user/Pollinators2/src/app/page.tsx": {
+    "mtime": 1781545222.6637735,
+    "ast_hash": "2521b4f6aaf5d9d59f1e7002e7da96d2",
+    "semantic_hash": "2521b4f6aaf5d9d59f1e7002e7da96d2"
+  },
+  "/home/user/Pollinators2/src/components/data/BackupReminder.tsx": {
+    "mtime": 1781545222.664536,
+    "ast_hash": "87c4d2d738b7f6bc824db754b41faf1b",
+    "semantic_hash": "87c4d2d738b7f6bc824db754b41faf1b"
+  },
+  "/home/user/Pollinators2/src/components/data/ExportImport.tsx": {
+    "mtime": 1781545222.6651044,
+    "ast_hash": "4378a621e53d08d888be50451412164c",
+    "semantic_hash": "4378a621e53d08d888be50451412164c"
+  },
+  "/home/user/Pollinators2/src/components/data/NudgeReminder.tsx": {
+    "mtime": 1781545222.6651044,
+    "ast_hash": "7011d82b0a1c095364187d9e10d79d9d",
+    "semantic_hash": "7011d82b0a1c095364187d9e10d79d9d"
+  },
+  "/home/user/Pollinators2/src/components/data/QuarterlyAudit.tsx": {
+    "mtime": 1781545222.6651044,
+    "ast_hash": "af042221141babb3fe5c34b5c3948178",
+    "semantic_hash": "af042221141babb3fe5c34b5c3948178"
+  },
+  "/home/user/Pollinators2/src/components/directory/DirectoryView.tsx": {
+    "mtime": 1781545222.6651044,
+    "ast_hash": "2441a80b328014acc8c052a030fb2c98",
+    "semantic_hash": "2441a80b328014acc8c052a030fb2c98"
+  },
+  "/home/user/Pollinators2/src/components/directory/EmptyState.tsx": {
+    "mtime": 1781545222.666056,
+    "ast_hash": "4d7c2105790f55562946ee9b2013f39f",
+    "semantic_hash": "4d7c2105790f55562946ee9b2013f39f"
+  },
+  "/home/user/Pollinators2/src/components/directory/PersonCard.tsx": {
+    "mtime": 1781545222.666056,
+    "ast_hash": "3eeea51bd0731b58324487bd26568691",
+    "semantic_hash": "3eeea51bd0731b58324487bd26568691"
+  },
+  "/home/user/Pollinators2/src/components/directory/PersonDetail.tsx": {
+    "mtime": 1781545222.666056,
+    "ast_hash": "0ea7e4dc7e7607249f8442ec10c7e76c",
+    "semantic_hash": "0ea7e4dc7e7607249f8442ec10c7e76c"
+  },
+  "/home/user/Pollinators2/src/components/directory/TierSection.tsx": {
+    "mtime": 1781545222.666056,
+    "ast_hash": "637b08f9e78404c451750187c012654b",
+    "semantic_hash": "637b08f9e78404c451750187c012654b"
+  },
+  "/home/user/Pollinators2/src/components/directory/TieredList.tsx": {
+    "mtime": 1781545222.666056,
+    "ast_hash": "346656ae812b64c4f9ab461dc4e7182b",
+    "semantic_hash": "346656ae812b64c4f9ab461dc4e7182b"
+  },
+  "/home/user/Pollinators2/src/components/forms/DeleteConfirm.tsx": {
+    "mtime": 1781545222.666056,
+    "ast_hash": "3b6d4b4866cbc8ec7d64321ee02bc5e2",
+    "semantic_hash": "3b6d4b4866cbc8ec7d64321ee02bc5e2"
+  },
+  "/home/user/Pollinators2/src/components/forms/InteractionForm.tsx": {
+    "mtime": 1781545222.6677277,
+    "ast_hash": "968c8abd5152b238d7ff56be1b8618c1",
+    "semantic_hash": "968c8abd5152b238d7ff56be1b8618c1"
+  },
+  "/home/user/Pollinators2/src/components/forms/InteractionModal.tsx": {
+    "mtime": 1781545222.6677277,
+    "ast_hash": "276dacbd53cd908799aae84f477fa716",
+    "semantic_hash": "276dacbd53cd908799aae84f477fa716"
+  },
+  "/home/user/Pollinators2/src/components/forms/PollinatorForm.tsx": {
+    "mtime": 1781545222.6677277,
+    "ast_hash": "29325c29b3969006d2bbb87e68ae4cb4",
+    "semantic_hash": "29325c29b3969006d2bbb87e68ae4cb4"
+  },
+  "/home/user/Pollinators2/src/components/forms/PollinatorModal.tsx": {
+    "mtime": 1781545222.6677277,
+    "ast_hash": "7c64896cc07afd48198738bad4cbd749",
+    "semantic_hash": "7c64896cc07afd48198738bad4cbd749"
+  },
+  "/home/user/Pollinators2/src/components/galaxy/GalaxyView.tsx": {
+    "mtime": 1781545222.6677277,
+    "ast_hash": "14b7d5110cb10aa269104d294991526f",
+    "semantic_hash": "14b7d5110cb10aa269104d294991526f"
+  },
+  "/home/user/Pollinators2/src/components/layout/AppShell.tsx": {
+    "mtime": 1781545222.6677277,
+    "ast_hash": "180bdfe46c8574ced830d0c5c6459100",
+    "semantic_hash": "180bdfe46c8574ced830d0c5c6459100"
+  },
+  "/home/user/Pollinators2/src/components/layout/Header.tsx": {
+    "mtime": 1781545222.6698642,
+    "ast_hash": "f98df93ed49140d58fcf3d11c0db76ab",
+    "semantic_hash": "f98df93ed49140d58fcf3d11c0db76ab"
+  },
+  "/home/user/Pollinators2/src/components/layout/ServiceBar.tsx": {
+    "mtime": 1781545222.6698642,
+    "ast_hash": "edf6430a7174ff0193a963e4a5013407",
+    "semantic_hash": "edf6430a7174ff0193a963e4a5013407"
+  },
+  "/home/user/Pollinators2/src/components/layout/ThemeToggle.tsx": {
+    "mtime": 1781545222.6698642,
+    "ast_hash": "bdf9c591db93bec023b586588dd45d6a",
+    "semantic_hash": "bdf9c591db93bec023b586588dd45d6a"
+  },
+  "/home/user/Pollinators2/src/components/shared/Button.tsx": {
+    "mtime": 1781545222.6698642,
+    "ast_hash": "dfb163b8553841e83dad16a03c87e651",
+    "semantic_hash": "dfb163b8553841e83dad16a03c87e651"
+  },
+  "/home/user/Pollinators2/src/components/shared/FilterPanel.tsx": {
+    "mtime": 1781545222.670897,
+    "ast_hash": "40f782bc4bad056029c1b398474f226d",
+    "semantic_hash": "40f782bc4bad056029c1b398474f226d"
+  },
+  "/home/user/Pollinators2/src/components/shared/Input.tsx": {
+    "mtime": 1781545222.670897,
+    "ast_hash": "82a33318419f4073f285bba8759ad437",
+    "semantic_hash": "82a33318419f4073f285bba8759ad437"
+  },
+  "/home/user/Pollinators2/src/components/shared/Modal.tsx": {
+    "mtime": 1781545222.670897,
+    "ast_hash": "223f906026f037906a654babbabc99ea",
+    "semantic_hash": "223f906026f037906a654babbabc99ea"
+  },
+  "/home/user/Pollinators2/src/components/shared/ReciprocityDot.tsx": {
+    "mtime": 1781545222.670897,
+    "ast_hash": "af28357a9158dc12344809853b132b1f",
+    "semantic_hash": "af28357a9158dc12344809853b132b1f"
+  },
+  "/home/user/Pollinators2/src/components/shared/SearchBar.tsx": {
+    "mtime": 1781545222.670897,
+    "ast_hash": "0a57115ae376da7e6bc712420899b555",
+    "semantic_hash": "0a57115ae376da7e6bc712420899b555"
+  },
+  "/home/user/Pollinators2/src/components/shared/Select.tsx": {
+    "mtime": 1781545222.670897,
+    "ast_hash": "0bf384a00e19afd722f598aea41fd06c",
+    "semantic_hash": "0bf384a00e19afd722f598aea41fd06c"
+  },
+  "/home/user/Pollinators2/src/components/shared/TagBadge.tsx": {
+    "mtime": 1781545222.670897,
+    "ast_hash": "f6ea8684e87a2ebb74f196e3bddb7208",
+    "semantic_hash": "f6ea8684e87a2ebb74f196e3bddb7208"
+  },
+  "/home/user/Pollinators2/src/components/shared/TagInput.tsx": {
+    "mtime": 1781545222.670897,
+    "ast_hash": "5c367f7a352913f851ffe948baf48146",
+    "semantic_hash": "5c367f7a352913f851ffe948baf48146"
+  },
+  "/home/user/Pollinators2/src/components/shared/TextArea.tsx": {
+    "mtime": 1781545222.670897,
+    "ast_hash": "0029d3aa0b7dd3aa7af2eb55988a8216",
+    "semantic_hash": "0029d3aa0b7dd3aa7af2eb55988a8216"
+  },
+  "/home/user/Pollinators2/src/components/shared/TrustStars.tsx": {
+    "mtime": 1781545222.670897,
+    "ast_hash": "e2f0cde375ed05ffb792d47f92bef398",
+    "semantic_hash": "e2f0cde375ed05ffb792d47f92bef398"
+  },
+  "/home/user/Pollinators2/src/hooks/useBackupReminder.ts": {
+    "mtime": 1781545222.670897,
+    "ast_hash": "0c50b75c54df97ed0dc97b423b9dc6d3",
+    "semantic_hash": "0c50b75c54df97ed0dc97b423b9dc6d3"
+  },
+  "/home/user/Pollinators2/src/hooks/useFilteredPollinators.ts": {
+    "mtime": 1781545222.6736076,
+    "ast_hash": "fbe674090c407326f8e064220c1ce617",
+    "semantic_hash": "fbe674090c407326f8e064220c1ce617"
+  },
+  "/home/user/Pollinators2/src/hooks/useGentleNudges.ts": {
+    "mtime": 1781545222.6736076,
+    "ast_hash": "2a3b80fcf6190098d3750ba77774676d",
+    "semantic_hash": "2a3b80fcf6190098d3750ba77774676d"
+  },
+  "/home/user/Pollinators2/src/hooks/useQuarterlyAudit.ts": {
+    "mtime": 1781545222.6736076,
+    "ast_hash": "05151952a89d3ebb80221e49bec7c596",
+    "semantic_hash": "05151952a89d3ebb80221e49bec7c596"
+  },
+  "/home/user/Pollinators2/src/lib/completeness.ts": {
+    "mtime": 1781545222.6736076,
+    "ast_hash": "4c2be07b445e6429eed9164c3f340748",
+    "semantic_hash": "4c2be07b445e6429eed9164c3f340748"
+  },
+  "/home/user/Pollinators2/src/lib/dates.ts": {
+    "mtime": 1781545222.6743524,
+    "ast_hash": "a33b748f7f258d660ec211ee71b67007",
+    "semantic_hash": "a33b748f7f258d660ec211ee71b67007"
+  },
+  "/home/user/Pollinators2/src/lib/export.ts": {
+    "mtime": 1781545222.6743524,
+    "ast_hash": "45f18ba8238008a1d61579a9830b6326",
+    "semantic_hash": "45f18ba8238008a1d61579a9830b6326"
+  },
+  "/home/user/Pollinators2/src/lib/ids.ts": {
+    "mtime": 1781545222.6743524,
+    "ast_hash": "1310a87737d7777d380aa4f4f3043795",
+    "semantic_hash": "1310a87737d7777d380aa4f4f3043795"
+  },
+  "/home/user/Pollinators2/src/lib/importContacts.ts": {
+    "mtime": 1781545222.6743524,
+    "ast_hash": "53aa30c89e86f1681291222c3adc53a1",
+    "semantic_hash": "53aa30c89e86f1681291222c3adc53a1"
+  },
+  "/home/user/Pollinators2/src/lib/reciprocity.ts": {
+    "mtime": 1781545222.6743524,
+    "ast_hash": "573827a6dc4c236c155c5e936645e01a",
+    "semantic_hash": "573827a6dc4c236c155c5e936645e01a"
+  },
+  "/home/user/Pollinators2/src/store/usePollinatorStore.ts": {
+    "mtime": 1781545222.6743524,
+    "ast_hash": "f8872e751f95b15c3188f5ac277e6778",
+    "semantic_hash": "f8872e751f95b15c3188f5ac277e6778"
+  },
+  "/home/user/Pollinators2/src/store/useUIStore.ts": {
+    "mtime": 1781545222.6762514,
+    "ast_hash": "0de874d51376f3150b3fb1d49bfe3ce5",
+    "semantic_hash": "0de874d51376f3150b3fb1d49bfe3ce5"
+  },
+  "/home/user/Pollinators2/src/types/filters.ts": {
+    "mtime": 1781545222.6762514,
+    "ast_hash": "b2d94d5998ef1797357f4d18252fa5d4",
+    "semantic_hash": "b2d94d5998ef1797357f4d18252fa5d4"
+  },
+  "/home/user/Pollinators2/src/types/pollinator.ts": {
+    "mtime": 1781545222.6771994,
+    "ast_hash": "234c57d9697e35990f2b6c59cb9ae798",
+    "semantic_hash": "234c57d9697e35990f2b6c59cb9ae798"
+  },
+  "/home/user/Pollinators2/tsconfig.json": {
+    "mtime": 1781545222.6771994,
+    "ast_hash": "ee17fd1c97c735e9f3564e3f5251f125",
+    "semantic_hash": "ee17fd1c97c735e9f3564e3f5251f125"
+  },
+  "/home/user/Pollinators2/AGENTS.md": {
+    "mtime": 1781545222.6419685,
+    "ast_hash": "9e09241799026ac05be315a2f0b50055",
+    "semantic_hash": "9e09241799026ac05be315a2f0b50055"
+  },
+  "/home/user/Pollinators2/CLAUDE.md": {
+    "mtime": 1781545222.6419685,
+    "ast_hash": "415a8f0be35cf6bee9bf3934fccb067f",
+    "semantic_hash": "415a8f0be35cf6bee9bf3934fccb067f"
+  },
+  "/home/user/Pollinators2/README.md": {
+    "mtime": 1781545222.6419685,
+    "ast_hash": "f1460bb04e82d9bea8bdf24e7862fcdb",
+    "semantic_hash": "f1460bb04e82d9bea8bdf24e7862fcdb"
+  },
+  "/home/user/Pollinators2/docs/building-pollinators-manuscript.md": {
+    "mtime": 1781545222.6419685,
+    "ast_hash": "aa988fdd0ebfb3d1d159ad66e8151731",
+    "semantic_hash": "aa988fdd0ebfb3d1d159ad66e8151731"
+  },
+  "/home/user/Pollinators2/docs/pollinators-touchstone.html": {
+    "mtime": 1781545222.6455257,
+    "ast_hash": "b65e9ee4fb194b6d8d885ebcbcae564f",
+    "semantic_hash": "b65e9ee4fb194b6d8d885ebcbcae564f"
+  },
+  "/home/user/Pollinators2/docs/remember-territory-map.pdf": {
+    "mtime": 1781545222.6539683,
+    "ast_hash": "3db500982b0cc840cf86ce2dba2561c5",
+    "semantic_hash": "3db500982b0cc840cf86ce2dba2561c5"
+  },
+  "/home/user/Pollinators2/public/file.svg": {
+    "mtime": 1781545222.6579683,
+    "ast_hash": "d09f95206c3fa0bb9bd9fefabfd0ea71",
+    "semantic_hash": "d09f95206c3fa0bb9bd9fefabfd0ea71"
+  },
+  "/home/user/Pollinators2/public/globe.svg": {
+    "mtime": 1781545222.6616614,
+    "ast_hash": "2aaafa6a49b6563925fe440891e32717",
+    "semantic_hash": "2aaafa6a49b6563925fe440891e32717"
+  },
+  "/home/user/Pollinators2/public/next.svg": {
+    "mtime": 1781545222.6616614,
+    "ast_hash": "8e061864f388b47f33a1c3780831193e",
+    "semantic_hash": "8e061864f388b47f33a1c3780831193e"
+  },
+  "/home/user/Pollinators2/public/vercel.svg": {
+    "mtime": 1781545222.6616614,
+    "ast_hash": "c0af2f507b369b085b35ef4bbe3bcf1e",
+    "semantic_hash": "c0af2f507b369b085b35ef4bbe3bcf1e"
+  },
+  "/home/user/Pollinators2/public/window.svg": {
+    "mtime": 1781545222.6616614,
+    "ast_hash": "a2760511c65806022ad20adf74370ff3",
+    "semantic_hash": "a2760511c65806022ad20adf74370ff3"
+  }
+}
